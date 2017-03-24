@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <title>Login and Registration</title>
+        {% load staticfiles %}
+        <link rel="stylesheet" href="{% static 'login/css/styles.css' %}"media="screen" title="Courses"  charset="utf-8">
+    </head>
+    <body>
+        <div id="wrapper">
+            <div id="login">
+                {% for message in messages %}
+                <h3>{{message}}</h3>
+                {% endfor %}
+                <form id="newuser" action="{% url 'login:check'%}" method='post'>
+                    {% csrf_token %}
+                    <p>Email: </p><input class="inputtext" type='text' name='email'>
+                    <p>First Name: </p><input class="inputtext" type="text" name="first">
+                    <p>Last Name: </p><input class="inputtext" type="text" name="last">
+                    <p>Password: </p><input class="inputtext" type="password" name="passwd">
+                    <p>Confirm Password: </p><input class="inputtext" type="password" name="passwdconf"><br>
+                    <input class="buttonclass" type='submit' value='Register and Login'>
+                </form>
+                <form id="existinguser" action="{% url 'login:login'%}" method='post'>
+                    {% csrf_token %}
+                    <p>Email: </p><input class="inputtext" type='text' name='email'>
+                    <p>Password: </p><input class="inputtext" type="password" name="passwd"><br>
+                    <input class="buttonclass" type='submit' value='Login'>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

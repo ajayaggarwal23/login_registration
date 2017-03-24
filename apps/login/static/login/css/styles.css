@@ -1,0 +1,27 @@
+#wrapper{
+    width: 970px;
+}
+#login{
+    width: 600px;
+    border: solid 1px black;
+    background-color: lightblue;
+}
+#login h3{
+    width: 450px;
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 0px;
+}
+#login p{
+    width: 200px;
+    display: inline-block;
+    margin-top: 0px;
+}
+.buttonclass{
+    margin-left: 250px;
+    background-color: orange;
+}
+.inputtext{
+    margin-left: -50px;
+    margin-right: 200px;
+}
